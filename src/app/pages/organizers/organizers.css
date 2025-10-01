@@ -1,0 +1,170 @@
+:host {
+  display: block;
+  /* Utiliza o mesmo fundo gradiente do design principal */
+  background: linear-gradient(135deg, #4c00b0, #9400d3);
+  color: #FFFFFF;
+  padding: 4rem 2rem; /* Espaçamento interno */
+  min-height: 100vh;
+}
+
+.organizers-page {
+  max-width: 1200px;
+  margin: 0 auto; /* Centraliza o conteúdo */
+  text-align: center;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 4rem;
+  font-family: 'Poppins', sans-serif; /* Fonte aplicada */
+}
+
+.team-section {
+  margin-bottom: 3.5rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-align: left;
+  padding-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+
+  /* A Mágica do Gradiente no Texto */
+  background: linear-gradient(90deg, #f8a2d8, #e6007e); /* Gradiente rosa */
+  -webkit-background-clip: text; /* Corta o fundo no formato do texto (para Chrome/Safari) */
+  background-clip: text; /* Padrão */
+  color: transparent; /* Deixa a cor original do texto transparente */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3); /* Mantém a linha inferior */
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os cards quebrem a linha */
+  justify-content: center; /* Centraliza os cards */
+  gap: 2rem; /* Espaço entre os cards */
+}
+
+.member-card {
+  /* Efeito de "vidro" */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 15px; /* Bordas arredondadas */
+  padding: 1.5rem;
+  width: 200px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Adicione border-color aqui */
+
+}
+
+.member-card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  border-color: #f8a2d8; /* Cor da borda alterada no hover */
+}
+
+/* Novo contêiner para a foto */
+.member-photo-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; /* O círculo agora fica no contêiner */
+  border: 3px solid #FFFFFF;
+  margin: 0 auto 1rem;
+  overflow: hidden; /* ESSENCIAL: Esconde o que "vazar" da imagem */
+}
+
+/* A imagem agora preenche o contêiner e tem uma transição suave */
+.member-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease; /* Adiciona a suavidade na animação */
+}
+
+/* O EFEITO DE ZOOM */
+/* Quando o mouse estiver sobre o card... */
+.member-card:hover .member-photo {
+  /* ...aumente a escala da imagem */
+  transform: scale(1.15); /* Aumenta a imagem em 15% */
+}
+
+.member-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #FFFFFF; /* Cor alterada para branco */
+  /* Sombra de texto para melhorar o contraste */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Bloco de animação */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aplica a animação ao carregar o card */
+.member-card {
+  /* ... todo o estilo que já estava aqui ... */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 1.5rem;
+  width: 200px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  /* Linha nova para a animação de entrada */
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+
+/* Estilo e Posição do Mascote */
+.page-mascot {
+    width: 150px; /* Tamanho do mascote */
+    position: absolute; /* Permite posicionamento livre */
+    top: 2rem;
+    right: 5%;
+    animation: slideInFromRight 1s ease-out; /* Animação de entrada */
+}
+
+/* Animação de entrada */
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+/* --- Estilos do Rodapé --- */
+.page-footer {
+  width: 100%;
+  padding: 2rem;
+  margin-top: 4rem; /* Um espaço para separar do conteúdo acima */
+  display: flex;
+  justify-content: center; /* Centraliza o logo horizontalmente */
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Linha sutil de separação */
+}
+
+.footer-logo {
+  height: 100px; /* Define a altura do logo */
+  width: auto; /* A largura se ajusta automaticamente */
+  opacity: 0.8; /* Deixa o logo um pouco mais sutil */
+}
