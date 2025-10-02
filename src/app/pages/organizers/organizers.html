@@ -1,164 +1,75 @@
 <section class="organizers-page">
   <h2 class="page-title">Conheça a Equipe HackTheCloud</h2>
-  <img src="assets/mascote.png" alt="Mascote Claudinho" class="page-mascot">
+
+  <div class="mascot-container">
+    <img src="assets/claudinho-up.png" alt="Mascote Claudinho" class="mascot-static">
+    <img src="assets/claudinho-animado.gif" alt="Mascote Claudinho Animado" class="mascot-animated">
+    <div class="speech-bubble">
+      Conheça a equipe que tornou o HackTheCloud possível!
+    </div>
+  </div>
 
   <div class="team-section">
     <h3 class="section-title">Coordenação</h3>
     <div class="team-grid">
-      <a href="https://www.cic.unb.br/professores/93-marcelo-marotta" target="_blank" class="member-link">
-        <div class="member-card">
-          <div class="member-photo-container">
-            <img src="assets/organizadores/claudinho champion.png" alt="Foto de Marcelo Antonio Marotta" class="member-photo">
+      <div class="member-card" (click)="toggleFlip(coordinator)">
+        <div class="card-inner" [class.is-flipped]="coordinator.isFlipped">
+          <div class="card-front">
+            <div class="member-photo-container">
+              <img [src]="coordinator.photoUrl" [alt]="'Foto de ' + coordinator.name" class="member-photo">
+            </div>
+            <p class="member-name">{{ coordinator.name }}</p>
           </div>
-          <p class="member-name">Marcelo Antonio Marotta</p>
+          <div class="card-back">
+            <h4>{{ coordinator.role }}</h4>
+            <p>Departamento de Ciência da Computação (CIC)</p>
+            <a [href]="coordinator.link" target="_blank">Ver Perfil</a>
+          </div>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 
   <div class="team-section">
     <h3 class="section-title">Comissão Organizadora</h3>
+    
+    <div class="team-grid manager-grid">
+      <div class="member-card" (click)="toggleFlip(manager)">
+        <div class="card-inner" [class.is-flipped]="manager.isFlipped">
+          <div class="card-front">
+            <div class="member-photo-container">
+              <img [src]="manager.photoUrl" [alt]="'Foto de ' + manager.name" class="member-photo">
+            </div>
+            <p class="member-name">{{ manager.name }}</p>
+          </div>
+          <div class="card-back">
+            <h4>{{ manager.role }}</h4>
+            <a [href]="manager.link" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="team-grid">
-      <a href="#" target="_blank" class="member-link">
-        <div class="member-card">
-          <div class="member-photo-container">
-            <img src="assets/organizadores/claudinho desenho png.png" alt="Foto de Maria Vitoria Matos Mourao" class="member-photo">
+      @for (member of commission; track member.name) {
+        <div class="member-card" (click)="toggleFlip(member)">
+          <div class="card-inner" [class.is-flipped]="member.isFlipped">
+            <div class="card-front">
+              <div class="member-photo-container">
+                <img [src]="member.photoUrl" [alt]="'Foto de ' + member.name" class="member-photo">
+              </div>
+              <p class="member-name">{{ member.name }}</p>
+            </div>
+            <div class="card-back">
+              <h4>{{ member.role }}</h4>
+              <a [href]="member.link" target="_blank">LinkedIn</a>
+            </div>
           </div>
-          <p class="member-name">Maria Vitoria Matos Mourao</p>
         </div>
-      </a>
-      <a href="#" target="_blank" class="member-link">
-        <div class="member-card">
-          <div class="member-photo-container">
-            <img src="assets/organizadores/claudinho desenho png.png" alt="Foto de Gabriel Jose dos Santos" class="member-photo">
-          </div>
-          <p class="member-name">Gabriel Jose dos Santos</p>
-        </div>
-      </a>
-      <a href="#" target="_blank" class="member-link">
-        <div class="member-card">
-          <div class="member-photo-container">
-            <img src="assets/organizadores/claudinho desenho png.png" alt="Foto de Vitor Alencar Ribeiro" class="member-photo">
-          </div>
-          <p class="member-name">Vitor Alencar Ribeiro</p>
-        </div>
-      </a>
-      <a href="#" target="_blank" class="member-link">
-        <div class="member-card">
-          <div class="member-photo-container">
-            <img src="assets/organizadores/claudinho desenho png.png" alt="Foto de Thiago Gomes da Silva Lourenco" class="member-photo">
-          </div>
-          <p class="member-name">Thiago Gomes da Silva Lourenco</p>
-        </div>
-      </a>
-      <a href="#" target="_blank" class="member-link">
-        <div class="member-card">
-          <div class="member-photo-container">
-            <img src="assets/organizadores/claudinho desenho png.png" alt="Foto de Luca Barbosa Santos" class="member-photo">
-          </div>
-          <p class="member-name">Luca Barbosa Santos</p>
-        </div>
-      </a>
-      <a href="#" target="_blank" class="member-link">
-        <div class="member-card">
-          <div class="member-photo-container">
-            <img src="assets/organizadores/claudinho desenho png.png" alt="Foto de Lucas Santana da Silva" class="member-photo">
-          </div>
-          <p class="member-name">Lucas Santana da Silva</p>
-        </div>
-      </a>
-      <a href="#" target="_blank" class="member-link">
-        <div class="member-card">
-          <div class="member-photo-container">
-            <img src="assets/organizadores/claudinho desenho png.png" alt="Foto de Mateus Lúcio Silva Mariano" class="member-photo">
-          </div>
-          <p class="member-name">Mateus Lúcio Silva Mariano</p>
-        </div>
-      </a>
-      <a href="#" target="_blank" class="member-link">
-        <div class="member-card">
-          <div class="member-photo-container">
-            <img src="assets/organizadores/claudinho desenho png.png" alt="Foto de Pedro Araujo Cordeiro Viana" class="member-photo">
-          </div>
-          <p class="member-name">Pedro Araujo Cordeiro Viana</p>
-        </div>
-      </a>
-      <a href="#" target="_blank" class="member-link">
-        <div class="member-card">
-          <div class="member-photo-container">
-            <img src="assets/organizadores/claudinho desenho png.png" alt="Foto de Pedro Daniel Bomtempo Medeiros" class="member-photo">
-          </div>
-          <p class="member-name">Pedro Daniel Bomtempo Medeiros</p>
-        </div>
-      </a>
-      <a href="#" target="_blank" class="member-link">
-        <div class="member-card">
-          <div class="member-photo-container">
-            <img src="assets/organizadores/claudinho desenho png.png" alt="Foto de Thiago Cesar Roma Vieira da Silva" class="member-photo">
-          </div>
-          <p class="member-name">Thiago Cesar Roma Vieira da Silva</p>
-        </div>
-      </a>
-      <a href="#" target="_blank" class="member-link">
-        <div class="member-card">
-          <div class="member-photo-container">
-            <img src="assets/organizadores/claudinho desenho png.png" alt="Foto de João Lucas de Andrade Ribeiro Filho" class="member-photo">
-          </div>
-          <p class="member-name">João Lucas de Andrade Ribeiro Filho</p>
-        </div>
-      </a>
-      <a href="#" target="_blank" class="member-link">
-        <div class="member-card">
-          <div class="member-photo-container">
-            <img src="assets/organizadores/claudinho desenho png.png" alt="Foto de Joao Felipe de Sousa Braz" class="member-photo">
-          </div>
-          <p class="member-name">Joao Felipe de Sousa Braz</p>
-        </div>
-      </a>
-      <a href="#" target="_blank" class="member-link">
-        <div class="member-card">
-          <div class="member-photo-container">
-            <img src="assets/organizadores/claudinho desenho png.png" alt="Foto de Letícia Picanço do Nascimento" class="member-photo">
-          </div>
-          <p class="member-name">Letícia Picanço do Nascimento</p>
-        </div>
-      </a>
-      <a href="#" target="_blank" class="member-link">
-        <div class="member-card">
-          <div class="member-photo-container">
-            <img src="assets/organizadores/claudinho desenho png.png" alt="Foto de Maria Eduarda Valadares Miraglia" class="member-photo">
-          </div>
-          <p class="member-name">Maria Eduarda Valadares Miraglia</p>
-        </div>
-      </a>
-      <a href="#" target="_blank" class="member-link">
-        <div class="member-card">
-          <div class="member-photo-container">
-            <img src="assets/organizadores/claudinho desenho png.png" alt="Foto de Maria Clara de Carvalho Moreira" class="member-photo">
-          </div>
-          <p class="member-name">Maria Clara de Carvalho Moreira</p>
-        </div>
-      </a>
-      <a href="#" target="_blank" class="member-link">
-        <div class="member-card">
-          <div class="member-photo-container">
-            <img src="assets/organizadores/claudinho desenho png.png" alt="Foto de Hugo Macedo Ramos" class="member-photo">
-          </div>
-          <p class="member-name">Hugo Macedo Ramos</p>
-        </div>
-      </a>
-      <a href="#" target="_blank" class="member-link">
-        <div class="member-card">
-          <div class="member-photo-container">
-            <img src="assets/organizadores/claudinho desenho png.png" alt="Foto de Marcello da Silva Mangueira" class="member-photo">
-          </div>
-          <p class="member-name">Marcello da Silva Mangueira</p>
-        </div>
-      </a>
+      }
     </div>
   </div>
 </section>
-
 
 <footer class="page-footer">
   <img src="assets/logo-hack-the-cloud.png" alt="Logo Hack The Cloud" class="footer-logo">
