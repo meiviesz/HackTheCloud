@@ -1,11 +1,20 @@
 <section class="organizers-page">
-  <h2 class="page-title">Conheça a Equipe HackTheCloud</h2>
+  <h2 class="page-title">
+    <span>Conheça a Equipe</span><br>
+    <span class="title-highlight">Hack the Cloud</span>
+  </h2>
 
   <div class="mascot-container">
     <img src="assets/claudinho-up.png" alt="Mascote Claudinho" class="mascot-static">
     <img src="assets/claudinho-animado.gif" alt="Mascote Claudinho Animado" class="mascot-animated">
-    <div class="speech-bubble">
-      Conheça a equipe que tornou o HackTheCloud possível!
+    
+    <div class="speech-bubble desktop-bubble">
+      Olá! Eu sou o Claudinho e serei seu guia. Passe o mouse ou clique nos cards para conhecer a equipe!
+    </div>
+
+    <div class="speech-bubble mobile-bubble" [class.hidden]="!isBubbleVisible">
+      Conheça a equipe que tornou o<br>
+      <span class="highlight-text">Hack the Cloud</span> possível!
     </div>
   </div>
 
@@ -51,8 +60,8 @@
     </div>
 
     <div class="team-grid">
-      @for (member of commission; track member.name) {
-        <div class="member-card" (click)="toggleFlip(member)">
+      @for (member of commission; track member; let i = $index) {
+        <div class="member-card" (click)="toggleFlip(member)" [style.animation-delay]="i * 0.05 + 's'">
           <div class="card-inner" [class.is-flipped]="member.isFlipped">
             <div class="card-front">
               <div class="member-photo-container">
