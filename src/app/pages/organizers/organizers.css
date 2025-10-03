@@ -12,6 +12,16 @@
   --cor-borda-transparente: rgba(255, 255, 255, 0.2);
 }
 
+/* Reset global e regra de ouro do box-sizing */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 .organizers-page {
   max-width: 1200px;
   margin: 0 auto;
@@ -29,7 +39,12 @@
 
 .page-title .title-highlight {
   font-weight: 400; /* Regular */
-  opacity: 0.9;
+  
+  /* Efeito de Gradiente no Texto */
+  background: linear-gradient(90deg, var(--cor-secundaria-magenta), #fcc5e4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .team-section {
@@ -52,6 +67,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  perspective: 1000px;
+  
 }
 
 .manager-grid {
@@ -66,7 +83,8 @@
   transition: transform 0.3s ease;
   animation: fadeIn 0.5s ease-out forwards;
   opacity: 0;
-  margin: 2rem;
+  margin: 1rem;
+  transform-style: preserve-3d;
 }
 
 .member-card:hover {
@@ -83,7 +101,7 @@
 }
 
 .card-inner.is-flipped {
-  transform: rotateY(180deg) translateX(-33px);
+  transform: rotateY(180deg);
 }
 
 .card-front,
@@ -289,14 +307,25 @@
   width: 100%;
   padding: 2rem;
   margin-top: 4rem;
+  border-top: 1px solid var(--cor-borda-transparente);
+}
+
+.footer-logos {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid var(--cor-borda-transparente);
+  gap: 3rem; /* Espaço entre os logos */
+  flex-wrap: wrap; /* Permite que os logos quebrem a linha em telas muito pequenas */
 }
 
 .footer-logo {
   height: 100px;
+  width: auto;
+  opacity: 0.8;
+}
+
+.unb-logo {
+  height: 60px; /* Tamanho um pouco menor para o logo da UnB */
   width: auto;
   opacity: 0.8;
 }
@@ -365,6 +394,8 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 1.2rem;
+    /* Efeito de "brilho neon" magenta */
+    text-shadow: 0 0 8px var(--cor-secundaria-magenta);
   }
 
   .speech-bubble.mobile-bubble.hidden {
