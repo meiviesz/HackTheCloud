@@ -1,0 +1,444 @@
+:host {
+  display: block;
+  background: linear-gradient(to bottom right, #2017ca, #9e00e9, #d50090);
+  color: #FFFFFF;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  overflow-x: hidden;
+  --cor-primaria-azul: #2017ca;
+  --cor-secundaria-magenta: #d50090;
+  --cor-secundaria-roxo: #9e00e9;
+  --cor-apoio-branco: #FFFFFF;
+  --cor-borda-transparente: rgba(255, 255, 255, 0.2);
+}
+
+/* Reset global e regra de ouro do box-sizing */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.organizers-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 4rem;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.page-title .title-highlight {
+  font-weight: 400; /* Regular */
+  
+  /* Efeito de Gradiente no Texto */
+  background: linear-gradient(90deg, var(--cor-secundaria-magenta), #fcc5e4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.team-section {
+  margin-bottom: 3.5rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-align: left;
+  padding-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  color: #FFFFFF;
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid var(--cor-borda-transparente);
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  perspective: 1000px;
+  
+}
+
+.manager-grid {
+  margin-bottom: 2rem;
+}
+
+.member-card {
+  width: 220px;
+  height: 280px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease;
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0;
+  margin: 1rem;
+  transform-style: preserve-3d;
+}
+
+.member-card:hover {
+  transform: scale(1.03);
+  z-index: 10;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--cor-borda-transparente);
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  justify-content: space-around;
+}
+
+.member-photo-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--cor-apoio-branco);
+  margin: 0 auto 1rem;
+  overflow: hidden;
+}
+
+.member-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.member-card:hover .member-photo {
+  transform: scale(1.15);
+}
+
+.member-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--cor-apoio-branco);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.card-back h4,
+.card-back p {
+  color: #FFFFFF;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.card-back h4 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+
+.card-back p {
+  font-size: 0.9rem;
+  padding: 0 0.5rem;
+}
+
+.card-back a {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.card-back a:hover {
+  background-color: #FFFFFF;
+  color: #d50090;
+  transform: scale(1.1);
+}
+
+.mascot-container {
+  position: absolute;
+  z-index: 20;
+  cursor: pointer;
+  width: 400px;
+  aspect-ratio: 1 / 1;
+  top: 100px;
+  right: 0%;
+}
+
+.mascot-static,
+.mascot-animated {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mascot-animated {
+  opacity: 0;
+}
+
+.mascot-container:hover .mascot-static {
+  opacity: 0;
+}
+
+.mascot-container:hover .mascot-animated {
+  opacity: 1;
+}
+
+.speech-bubble {
+  position: absolute;
+  width: 250px;
+  background-color: #FFFFFF;
+  color: #1E2A3A;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease-out;
+  pointer-events: none;
+}
+
+/* Posiciona o balão de forma mais inteligente à esquerda do mascote */
+.speech-bubble.desktop-bubble {
+  top: 50px; /* Alinha com a cabeça do mascote */
+  right: 95%; /* Posiciona à esquerda do contêiner do mascote */
+  margin-right: 1rem; /* Adiciona um espaço de respiro */
+  transform: translateY(10px) translateX(10px); /* Começa um pouco para baixo e para a direita */
+  
+  /* O resto das propriedades permanece igual */
+  position: absolute;
+  width: 250px;
+  background-color: #FFFFFF;
+  color: #1E2A3A;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-out;
+  pointer-events: none;
+}
+
+/* Corrige a seta para apontar para a direita */
+.speech-bubble.desktop-bubble::after {
+  content: '';
+  position: absolute;
+  top: 50%; /* Centraliza a seta na altura do balão */
+  margin-top: -10px;
+  left: 100%; /* Posiciona a seta no lado direito do balão */
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--cor-apoio-branco); /* Seta aponta para a direita */
+
+  /* Reseta as posições antigas */
+  bottom: auto;
+  right: auto;
+}
+
+/* A regra de hover permanece a mesma, mas agora a animação ficará correta */
+.mascot-container:hover .speech-bubble.desktop-bubble {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) translateX(0);
+}
+
+.speech-bubble.mobile-bubble {
+  display: none; /* Escondido no desktop */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInFromRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.page-footer {
+  width: 100%;
+  padding: 2rem;
+  margin-top: 4rem;
+  border-top: 1px solid var(--cor-borda-transparente);
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem; /* Espaço entre os logos */
+  flex-wrap: wrap; /* Permite que os logos quebrem a linha em telas muito pequenas */
+}
+
+.footer-logo {
+  height: 100px;
+  width: auto;
+  opacity: 0.8;
+}
+
+.unb-logo {
+  height: 60px; /* Tamanho um pouco menor para o logo da UnB */
+  width: auto;
+  opacity: 0.8;
+}
+
+/* --- ESTILOS EXCLUSIVOS PARA TELAS MENORES (MOBILE) --- */
+@media (max-width: 1024px) {
+  :host {
+    padding: 2rem 1rem;
+  }
+
+  .page-title {
+    display: none;
+  }
+
+  .mascot-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3rem;
+    height: auto;
+    top: auto;
+    right: auto;
+    left: auto;
+    aspect-ratio: unset;
+  }
+
+  .mascot-static {
+    display: none;
+  }
+
+  .mascot-animated {
+    opacity: 1;
+    position: relative;
+    width: 200px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .speech-bubble.desktop-bubble {
+    display: none; /* Esconde o balão de desktop */
+  }
+
+  .speech-bubble.mobile-bubble {
+    display: block; /* Mostra o balão de mobile */
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    pointer-events: auto;
+    position: relative;
+    width: 90%;
+    max-width: 300px;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    right: auto;
+    margin-left: 0;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 1.2rem;
+  }
+
+  .speech-bubble.mobile-bubble .highlight-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    /* Efeito de "brilho neon" magenta */
+    text-shadow: 0 0 8px var(--cor-secundaria-magenta);
+  }
+
+  .speech-bubble.mobile-bubble.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+  }
+
+  .speech-bubble.mobile-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent var(--cor-apoio-branco) transparent;
+    top: auto;
+    right: auto;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .member-card {
+    margin: 0.8rem;
+    width: 100%;
+    max-width: 280px;
+    height: 240px;
+  }
+
+  .member-photo-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .member-name {
+    font-size: 1rem;
+  }
+
+  .card-back h4 {
+    font-size: 1.1rem;
+  }
+}

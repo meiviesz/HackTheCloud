@@ -1,0 +1,87 @@
+<section class="organizers-page">
+  <h2 class="page-title">
+    <span>Conheça a Equipe</span><br>
+    <span class="title-highlight">Hack the Cloud</span>
+  </h2>
+
+  <div class="mascot-container">
+    <img src="assets/claudinho-up.png" alt="Mascote Claudinho" class="mascot-static">
+    <img src="assets/claudinho-animado.gif" alt="Mascote Claudinho Animado" class="mascot-animated">
+    <div class="speech-bubble desktop-bubble">
+      Olá! Eu sou o Claudinho e serei seu guia. Passe o mouse ou clique nos cards para conhecer a equipe!
+    </div>
+    <div class="speech-bubble mobile-bubble" [class.hidden]="!isBubbleVisible">
+      Conheça a equipe que tornou o<br>
+      <span class="highlight-text">Hack the Cloud</span><br>
+      possível!
+    </div>
+  </div>
+
+  <div class="team-section">
+    <h3 class="section-title">Coordenação</h3>
+    <div class="team-grid">
+      <div class="member-card" (click)="toggleFlip(coordinator)">
+        <div class="card-inner" [class.is-flipped]="coordinator.isFlipped">
+          <div class="card-front">
+            <div class="member-photo-container">
+              <img [src]="coordinator.photoUrl" [alt]="'Foto de ' + coordinator.name" class="member-photo">
+            </div>
+            <p class="member-name">{{ coordinator.name }}</p>
+          </div>
+          <div class="card-back">
+            <h4>{{ coordinator.role }}</h4>
+            <p>{{ coordinator.course }}</p>
+            <a [href]="coordinator.link" target="_blank">Ver Perfil</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="team-section">
+    <h3 class="section-title">Comissão Organizadora</h3>
+    <div class="team-grid manager-grid">
+      <div class="member-card" (click)="toggleFlip(manager)">
+        <div class="card-inner" [class.is-flipped]="manager.isFlipped">
+          <div class="card-front">
+            <div class="member-photo-container">
+              <img [src]="manager.photoUrl" [alt]="'Foto de ' + manager.name" class="member-photo">
+            </div>
+            <p class="member-name">{{ manager.name }}</p>
+          </div>
+          <div class="card-back">
+            <h4>{{ manager.role }}</h4>
+            <p>{{ manager.course }}</p>
+            <a [href]="manager.link" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="team-grid">
+      @for (member of commission; track member; let i = $index) {
+        <div class="member-card" (click)="toggleFlip(member)" [style.animation-delay]="i * 0.05 + 's'">
+          <div class="card-inner" [class.is-flipped]="member.isFlipped">
+            <div class="card-front">
+              <div class="member-photo-container">
+                <img [src]="member.photoUrl" [alt]="'Foto de ' + member.name" class="member-photo">
+              </div>
+              <p class="member-name">{{ member.name }}</p>
+            </div>
+            <div class="card-back">
+              <h4>{{ member.role }}</h4>
+              <p>{{ member.course }}</p>
+              <a [href]="member.link" target="_blank">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<footer class="page-footer">
+  <div class="footer-logos">
+    <img src="assets/logo-hack-the-cloud.png" alt="Logo Hack The Cloud" class="footer-logo">
+    <img src="assets/unb-logo.png" alt="Logo UnB" class="unb-logo">
+  </div>
+</footer>
