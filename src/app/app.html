@@ -1,1 +1,224 @@
 <app-organizers></app-organizers>
+<style>
+  :host {
+    --bright-blue: oklch(51.01% 0.274 263.83);
+    --electric-violet: oklch(53.18% 0.28 296.97);
+    --french-violet: oklch(47.66% 0.246 305.88);
+    --vivid-pink: oklch(69.02% 0.277 332.77);
+    --hot-red: oklch(61.42% 0.238 15.34);
+    --orange-red: oklch(63.32% 0.24 31.68);
+
+    --gray-900: oklch(19.37% 0.006 300.98);
+    --gray-700: oklch(36.98% 0.014 302.71);
+    --gray-400: oklch(70.9% 0.015 304.04);
+
+    --red-to-pink-to-purple-vertical-gradient: linear-gradient(180deg,
+        var(--orange-red) 0%,
+        var(--vivid-pink) 50%,
+        var(--electric-violet) 100%);
+
+    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(90deg,
+        var(--orange-red) 0%,
+        var(--vivid-pink) 50%,
+        var(--electric-violet) 100%);
+
+    --pill-accent: var(--bright-blue);
+
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1 {
+    font-size: 3.125rem;
+    color: var(--gray-900);
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.125rem;
+    margin: 0;
+    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+  }
+
+  p {
+    margin: 0;
+    color: var(--gray-700);
+  }
+
+  main {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: inherit;
+    position: relative;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 3rem;
+  }
+
+  .content h1 {
+    margin-top: 1.75rem;
+  }
+
+  .content p {
+    margin-top: 1.5rem;
+  }
+
+  .pill-group {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .pill {
+    display: flex;
+    align-items: center;
+    --pill-accent: var(--orange-red);
+    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
+    color: var(--pill-accent);
+    padding-inline: 10px;
+    padding-block: 30px;
+    border-radius: 2.75rem;
+    border: 0;
+    transition: background 0.3s ease;
+    font-family: var(--inter-font);
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.4rem;
+    letter-spacing: -0.00875rem;
+    text-decoration: none;
+    margin-bottom: 20px;
+  }
+
+  .pill:hover {
+    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+  }
+
+
+  .social-links {
+    display: flex;
+    align-items: center;
+    gap: 0.73rem;
+    margin-top: 1.5rem;
+  }
+
+  .social-links path {
+    transition: fill 0.3s ease;
+    fill: var(--gray-400);
+  }
+
+  .social-links a:hover svg path {
+    fill: var(--gray-900);
+  }
+
+  @media screen and (max-width: 650px) {
+    .content {
+      flex-direction: column;
+      width: max-content;
+    }
+
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: var(--red-to-pink-to-purple-horizontal-gradient);
+      margin: 24px 10;
+    }
+  }
+</style>
+
+<style>
+  .divider {
+    height: 2px;
+    width: 100%;
+    background: var(--red-to-pink-to-purple-horizontal-gradient);
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+</style>
+
+<main class="main">
+  <div class="content">
+    <div class="left-side">
+      <img src="assets/imagens/cloudinhoup.png" alt="cloudinhoup">
+      <h1>Hack The Cloud</h1>
+      <p>Uma imersão AWS</p>
+    </div>
+  </div>
+</main>
+
+<main class="selects">
+  <div class="content2">
+    <div class="divider" role="separator" aria-label="Divider"></div>
+    <div class="back-side">
+      <div class="pill-evento">
+        @for (item of [
+        { title: 'Sobre o Evento'},
+      ]; track item.title){
+      <a class="pill" (click)="scrollTo('Sobre o Evento')">
+        <span>Ir para Sobre o Evento</span>
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="10 -960 960 960" width="14" fill="currentColor">
+        </svg>
+      </a>
+
+    }
+        @for (item of [
+        { title: 'Cronograma'},
+      ]; track item.title){
+      <a class="pill" (click)="scrollTo('Cronograma')">
+        <span>Ir para Cronograma</span>
+        <svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 -960 960 960" width="14" fill="currentColor">
+        </svg>
+      </a>
+
+    }
+        @for (item of [
+        { title: 'Organização'},
+      ]; track item.title){
+      <a class="pill" (click)="scrollTo('Organização')">
+        <span>Ir para Organização</span>
+        <svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 -960 960 960" width="14" fill="currentColor">
+        </svg>
+      </a>
+
+    }
+
+      </div>
+      <div class="social-links">
+        <a href="https://www.instagram.com/hackthecloud.unb?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          aria-label="Instagram" target="_blank" rel="noopener">
+          <img src="assets/imagens/instagram.png" alt="Instagram">
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<section id="Sobre o Evento">
+  <h2>Sobre o Evento</h2>
+  <p>Hack The Cloud é uma imersão de 3 dias focada em capacitar estudantes universitários com habilidades práticas em computação em nuvem, utilizando a plataforma AWS. O evento oferece workshops, palestras e atividades práticas para ajudar os participantes a desenvolver competências técnicas e preparar-se para certificações reconhecidas no mercado.</p>
+</section>
+
+<section id="Cronograma">
+  <h2>Cronograma</h2>
+  <p>O cronograma do Hack The Cloud é estruturado para maximizar o aprendizado e a prática dos participantes ao longo de três dias intensivos. Cada dia é dedicado a diferentes aspectos da computação em nuvem, começando com conceitos básicos e avançando para tópicos mais complexos, incluindo workshops práticos e sessões de Q&A com especialistas da AWS.</p>
+</section>
+
+<section id="Organização">
+  <h2>Organização</h2>
+  <p>O Hack The Cloud é organizado por uma equipe dedicada de estudantes universitários e profissionais da área de tecnologia, com o apoio da AWS e outras instituições parceiras. A organização do evento foca em proporcionar uma experiência educacional de alta qualidade, garantindo que todos os aspectos logísticos e técnicos sejam cuidadosamente planejados e executados.</p>
+</section>  
