@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Organizers } from './pages/organizers/organizers';
-import { Principal } from './principal/principal';
+import { PagePrincipalComponent } from "./app";
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, Principal, Organizers], // ✅ importa os standalone components
-  templateUrl: './app.html',
-  styleUrls: ['./app.css']
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  imports: [PagePrincipalComponent]
 })
 export class AppComponent {}

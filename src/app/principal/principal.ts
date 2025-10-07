@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-principal',
-  standalone: true,
-  imports: [CommonModule],
+  standalone: false,
   templateUrl: './principal.html',
   styleUrls: ['./principal.css']
 })
-export class Principal {
+
+export class PrincipalComponent {
   scrollTo(sectionId: string) {
     const element = document.getElementById(sectionId);
     if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
