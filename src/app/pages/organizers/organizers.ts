@@ -1,5 +1,8 @@
 import { Component, HostListener } from '@angular/core';
 
+import { CommonModule } from '@angular/common';
+
+
 interface Member {
   name: string;
   photoUrl: string;
@@ -12,7 +15,7 @@ interface Member {
 @Component({
   selector: 'app-organizers',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './organizers.html',
   styleUrl: './organizers.css'
 })
