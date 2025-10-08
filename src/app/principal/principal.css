@@ -36,13 +36,10 @@
 }
 
 .header img {
-  width: 20%;
+  width: 15%;
   margin-left: 20%;
 }
 
-.selects img{
-  width: 20%;
-}
 
 .header-title h1 {
   /* Fluid typography: min 1.8rem, preferred based on viewport, max 5rem */
@@ -63,8 +60,6 @@
   pointer-events: auto;
   text-align: center;
 }
- 
-
 
 main {
   background: linear-gradient(to bottom right, #2017ca, #9e00e9, #d50090);
@@ -130,7 +125,7 @@ main {
   align-items: center;
   justify-content: center;
   --pill-accent: var(--orange-red);
-  background: rgba(255, 68, 0, 0.473);
+  background: linear-gradient(90deg, rgba(255,68,0,1), rgba(212,0,144,1));
   color: white;
   padding-inline: 20px;
   padding-block: 25px;
@@ -152,7 +147,7 @@ main {
   align-items: center;
   justify-content: center;
   --pill-accent: var(--orange-red);
-  background: rgba(255, 68, 0, 0.473);
+  background: linear-gradient(90deg, rgba(255,68,0,1), rgba(212,0,144,1));
   color: white;
   padding-inline: 62px;
   padding-block: 25px;
@@ -197,7 +192,6 @@ main {
     width: max-content;
   }
 
-  /* On small screens, stack subtitle below the title to avoid overlap */
   .header-title p {
     position: static;
     transform: none;
@@ -245,7 +239,7 @@ main {
   align-items: center;
   justify-content: center;
   background: white;
-  color: white;
+  color: black;
   padding-inline: 20px;
   padding-block: 25px;
   border-radius: 2.75rem;
@@ -265,6 +259,61 @@ main {
   justify-content: center;
   align-items: center;
   color: black;
+}
+
+#Sobre-o-Evento h2 {
+  display: flex;
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, rgba(255,68,0,1), rgba(212,0,144,1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  line-height: 1.08;
+  -webkit-font-smoothing: antialiased;
+}
+
+#Sobre-o-Evento {
+  overflow: visible;
+  padding-block: 0.8rem;
+}
+
+.evento img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  margin-top: 0;
+}
+
+.inscreva{  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.inscreva .pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --pill-accent: var(--orange-red);
+  background: linear-gradient(90deg, rgba(255,68,0,1), rgba(212,0,144,1));
+  color: white;
+  padding-inline: 200px;
+  padding-block: 25px;
+  border-radius: 2.75rem;
+  border: 0;
+  transition: background 0.3s ease;
+  font-family: var(--inter-font);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4rem;
+  letter-spacing: -0.00875rem;
+  text-decoration: none;
+  margin-bottom: 0px;
 }
 
 .evento p{
@@ -295,12 +344,35 @@ main {
   margin-bottom: 30px;
 }
 
+#cronograma {
+  overflow: visible;
+  padding-block: 0.8rem;
+}
+
 .cronograma h2 {
   display: flex;
   font-size: 2.5rem;
   justify-content: center;
   align-items: center;
   color: black;
+}
+
+#Cronograma h2 {
+  display: flex;
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, rgba(255,68,0,1), rgba(212,0,144,1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  line-height: 1.08;
+  -webkit-font-smoothing: antialiased;
+}
+
+#Cronograma {
+  overflow: visible;
+  padding-block: 0.8rem;
 }
 
 .cronograma p{
