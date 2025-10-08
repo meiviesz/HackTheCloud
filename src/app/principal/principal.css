@@ -271,6 +271,7 @@ main {
   display: flex;
   font-size: 1.5rem;
   justify-content: center;
+  text-align: center;
   align-items: center;
   color: black;
 }
@@ -310,6 +311,77 @@ main {
   color: black;
 }
 
+
+.cronograma-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.cronograma-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+  background: #fff;
+  color: var(--gray-900);
+  box-shadow: 0 6px 20px rgba(16, 24, 40, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cronograma-table thead th {
+  background: linear-gradient(90deg, rgba(255,68,0,1), rgba(212,0,144,1));
+  color: white;
+  text-align: center;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.cronograma-table tbody td {
+  padding: 12px 16px;
+  border-top: 1px solid #f1f1f3;
+  vertical-align: center;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.cronograma-table tbody tr:nth-child(even) td {
+  background: #fbfbfd;
+}
+
+@media screen and (max-width: 700px) {
+  .cronograma-table {
+    min-width: 0;
+    font-size: 0.9rem;
+  }
+
+  .cronograma-table thead {
+    display: flex; 
+  }
+
+  .cronograma-table tbody td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .cronograma-table tbody tr {
+    margin-bottom: 12px;
+    display: block;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    align-items: center;
+  }
+
+  .cronograma-table tbody td:first-child {
+    background: linear-gradient(90deg, rgba(255,68,0,0.08), transparent);
+    font-weight: 700;
+  }
+}
+
 .organização {
   display: flex;
   align-items: center;
@@ -336,13 +408,6 @@ main {
   color: black;
 }
 
-.organização p{
-  display: flex;
-  font-size: 1.5rem;
-  justify-content: center;
-  align-items: center;
-  color: black;
-}
 
 .go-organizacao {
   display: inline-block;
