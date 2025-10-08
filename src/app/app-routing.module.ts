@@ -1,11 +1,11 @@
 import { RouterModule, Routes } from '@angular/router';
 import { PrincipalComponent } from './principal/principal';
-import { Organizers } from './organizers/organizers';
+import { Organizers } from '../app/organizers/organizers';
 import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
   { path: '', component: PrincipalComponent },
-  //{ path: 'organizadores', component: Organizers },
+  { path: 'organizacao', component: Organizers },
 ];
 
 @NgModule({

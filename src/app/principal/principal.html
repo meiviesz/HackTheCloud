@@ -15,44 +15,50 @@
       <div class="back-side">
         <div class="pill-evento">
           <a class="pill" (click)="scrollTo('Sobre-o-Evento')">
-            <span>Ir para Sobre o Evento</span>
+            <span>Sobre o Evento</span>
             <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="10 -960 960 960" width="14" fill="currentColor"></svg>
           </a>
   
           <a class="pill" (click)="scrollTo('Cronograma')">
-            <span>Ir para Cronograma</span>
+            <span>Cronograma</span>
             <svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 -960 960 960" width="14" fill="currentColor"></svg>
           </a>
   
           <a class="pill" (click)="scrollTo('Organizacao')">
-            <span>Ir para Organização</span>
+            <span>Organização</span>
             <svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 -960 960 960" width="14" fill="currentColor"></svg>
           </a>
         </div>
   
         <div class="social-links">
-          <a href="https://www.instagram.com/hackthecloud.unb" aria-label="Instagram" target="_blank" rel="noopener">
-            <img src="assets/imagens/instagram.png" alt="Instagram">
+          <a class="pill" href="https://www.instagram.com/hackthecloud.unb" aria-label="Instagram" target="_blank" rel="noopener">
+            <span>Instagram</span>
           </a>
         </div>
       </div>
     </div>
   </section>
   
-  <section id="Sobre-o-Evento">
-    <h2>Sobre o Evento</h2>
-    <p>Hack The Cloud é uma imersão de 3 dias focada em capacitar estudantes universitários com habilidades práticas em computação em nuvem, utilizando a plataforma AWS. O evento oferece workshops, palestras e atividades práticas para ajudar os participantes a desenvolver competências técnicas e preparar-se para certificações reconhecidas no mercado.</p>
-  </section>
-  
-  <section id="Cronograma">
-    <h2>Cronograma</h2>
-    <p>O cronograma do Hack The Cloud é estruturado para maximizar o aprendizado e a prática dos participantes ao longo de três dias intensivos. Cada dia é dedicado a diferentes aspectos da computação em nuvem, começando com conceitos básicos e avançando para tópicos mais complexos, incluindo workshops práticos e sessões de Q&A com especialistas da AWS.</p>
-  </section>
-  
-  <section id="Organizacao">
-    <h2>Organização</h2>
-    <p>O Hack The Cloud é organizado por uma equipe dedicada de estudantes universitários e profissionais da área de tecnologia, com o apoio da AWS e outras instituições parceiras. A organização do evento foca em proporcionar uma experiência educacional de alta qualidade, garantindo que todos os aspectos logísticos e técnicos sejam cuidadosamente planejados e executados.</p>
-  </section>
+  <div class="evento">
+    <section id="Sobre-o-Evento">
+      <h2>Sobre o Evento</h2>
+      <p>Hack The Cloud é uma imersão de 3 dias focada em capacitar estudantes universitários com habilidades práticas em computação em nuvem, utilizando a plataforma AWS. O evento oferece workshops, palestras e atividades práticas para ajudar os participantes a desenvolver competências técnicas e preparar-se para certificações reconhecidas no mercado.</p>
+    </section>
+  </div>
+
+  <div class="cronograma">
+    <section id="Cronograma">
+      <h2>Cronograma</h2>
+      <p>O cronograma do Hack The Cloud é estruturado para maximizar o aprendizado e a prática dos participantes ao longo de três dias intensivos. Cada dia é dedicado a diferentes aspectos da computação em nuvem, começando com conceitos básicos e avançando para tópicos mais complexos, incluindo workshops práticos e sessões de Q&A com especialistas da AWS.</p>
+    </section>
+  </div>
+
+  <div class="organização">
+    <section id="Organizacao">
+      <button routerLink='organizacao'>Ir para Organização</button>
+    </section>
+  </div>
+
 </main>
 
 

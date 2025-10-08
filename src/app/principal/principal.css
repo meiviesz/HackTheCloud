@@ -39,6 +39,10 @@
   width: 20%;
 }
 
+.selects img{
+  width: 20%
+}
+
 .header-title {
   display: flex;
   flex-direction: column;
@@ -48,12 +52,14 @@
 }
 
 .header-title h1 {
-  font-size: 10rem;
-  color:  #2017ca;
+  font-size: 5rem;
+  display: flex;
+  margin: 3px;
+  color:  var(--vivid-pink);
 }
 
 .header-title p {
-  font-size: 3rem;
+  font-size: 2rem;
   color: #9e00e9 ;
 }
 
@@ -61,6 +67,7 @@
 main {
   background: linear-gradient(to bottom right, #2017ca, #9e00e9, #d50090);
   display: flex;
+  line-height: 100%;
   flex-direction: column;
 }
 
@@ -70,7 +77,7 @@ h1 {
   font-weight: 500;
   line-height: 100%;
   letter-spacing: -0.125rem;
-  margin: 0;
+  margin-right: 20px;
   font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
@@ -121,22 +128,45 @@ main {
   align-items: center;
   justify-content: center;
   --pill-accent: var(--orange-red);
-  background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
-  color: var(--pill-accent);
-  padding-inline: 10px;
-  padding-block: 30px;
+  background: rgba(255, 68, 0, 0.473);
+  color: white;
+  padding-inline: 20px;
+  padding-block: 25px;
   border-radius: 2.75rem;
   border: 0;
   transition: background 0.3s ease;
   font-family: var(--inter-font);
   font-size: 30px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.4rem;
   letter-spacing: -0.00875rem;
   text-decoration: none;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
+
+.social-links .pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --pill-accent: var(--orange-red);
+  background: rgba(255, 68, 0, 0.473);
+  color: white;
+  padding-inline: 62px;
+  padding-block: 25px;
+  border-radius: 2.75rem;
+  border: 0;
+  transition: background 0.3s ease;
+  font-family: var(--inter-font);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4rem;
+  letter-spacing: -0.00875rem;
+  text-decoration: none;
+  margin-bottom: 30px;
+}
+
 
 .pill:hover {
   background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
@@ -178,5 +208,129 @@ main {
   width: 100%;
   background: var(--red-to-pink-to-purple-horizontal-gradient);
   margin-top: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.evento {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: white;
+  padding-inline: 20px;
+  padding-block: 25px;
+  border-radius: 2.75rem;
+  font-family: var(--inter-font);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4rem;
+  letter-spacing: -0.00875rem;
+  text-decoration: none;
+  margin-bottom: 30px;
+}
+
+.evento {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: white;
+  padding-inline: 20px;
+  padding-block: 25px;
+  border-radius: 2.75rem;
+  font-family: var(--inter-font);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4rem;
+  letter-spacing: -0.00875rem;
+  text-decoration: none;
+  margin-bottom: 30px;
+}
+
+.evento h2 {
+  display: flex;
+  font-size: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.evento p{
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.cronograma {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: white;
+  padding-inline: 20px;
+  padding-block: 25px;
+  border-radius: 2.75rem;
+  font-family: var(--inter-font);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4rem;
+  letter-spacing: -0.00875rem;
+  text-decoration: none;
+  margin-bottom: 30px;
+}
+
+.cronograma h2 {
+  display: flex;
+  font-size: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.cronograma p{
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.organização {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: white;
+  padding-inline: 20px;
+  padding-block: 25px;
+  border-radius: 2.75rem;
+  font-family: var(--inter-font);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4rem;
+  letter-spacing: -0.00875rem;
+  text-decoration: none;
+  margin-bottom: 30px;
+}
+
+.organização h2 {
+  display: flex;
+  font-size: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.organização p{
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  color: black;
 }
