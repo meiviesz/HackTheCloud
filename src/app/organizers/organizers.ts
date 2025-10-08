@@ -14,7 +14,7 @@ interface Member {
 
 @Component({
   selector: 'app-organizers',
-
+  standalone: false,
   templateUrl: './organizers.html',
   styleUrls: ['./organizers.css']
 })
