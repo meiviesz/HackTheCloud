@@ -23,11 +23,12 @@
             <span>Cronograma</span>
             <svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 -960 960 960" width="14" fill="currentColor"></svg>
           </a>
-  
-          <a class="pill" (click)="scrollTo('Organizacao')">
-            <span>Organização</span>
-            <svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 -960 960 960" width="14" fill="currentColor"></svg>
-          </a>
+
+          <div class="organização">
+            <section id="Organizacao">
+              <a class="pill go-organizacao" routerLink="organizacao">Ir para Organização</a>
+            </section>
+          </div>
         </div>
   
         <div class="social-links">
@@ -121,11 +122,6 @@
     </section>
   </div>
 
-  <div class="organização">
-    <section id="Organizacao">
-      <button class="go-organizacao" routerLink="organizacao">Ir para Organização</button>
-    </section>
-  </div>
 
 </main>
 

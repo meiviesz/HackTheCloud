@@ -12,7 +12,6 @@
   --cor-borda-transparente: rgba(255, 255, 255, 0.2);
 }
 
-/* Reset global e regra de ouro do box-sizing */
 html, body {
   margin: 0;
   padding: 0;
