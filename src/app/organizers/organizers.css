@@ -29,6 +29,57 @@ html, body {
   position: relative;
 }
 
+
+.organizers-top {
+  position: relative;
+  display: flex;
+  padding-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+
+.back-button {
+  position: absolute;
+  left: 1rem;
+  top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+  text-decoration: none;
+}
+
+.back-button:hover,
+.back-button:focus {
+  transform: translateY(-2px);
+  background: #FFFFFF;
+  color: var(--cor-primaria-azul);
+  outline: none;
+}
+
+
+@media (max-width: 768px) {
+  .back-button {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin-bottom: 1rem;
+    width: auto;
+    justify-content: center;
+  }
+  .organizers-top { padding-top: 0.5rem; }
+}
+
 .page-title {
   font-size: 3rem;
   font-weight: bold;
@@ -38,9 +89,7 @@ html, body {
 }
 
 .page-title .title-highlight {
-  font-weight: 400; /* Regular */
-  
-  /* Efeito de Gradiente no Texto */
+  font-weight: 400; 
   background: linear-gradient(90deg, var(--cor-secundaria-magenta), #fcc5e4);
   -webkit-background-clip: text;
   background-clip: text;

@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { PagePrincipalComponent } from "./app";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  imports: [PagePrincipalComponent]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {}

@@ -37,31 +37,33 @@
 
 .header img {
   width: 20%;
+  margin-left: 20%;
 }
 
 .selects img{
-  width: 20%
-}
-
-.header-title {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-  justify-content: center;
-  align-items: center;
+  width: 20%;
 }
 
 .header-title h1 {
-  font-size: 5rem;
+  /* Fluid typography: min 1.8rem, preferred based on viewport, max 5rem */
+  font-size: clamp(1.8rem, 2.2rem + 3.2vw, 5rem);
   display: flex;
   margin: 3px;
-  color:  var(--vivid-pink);
 }
 
 .header-title p {
-  font-size: 2rem;
-  color: #9e00e9 ;
+  font-size: clamp(1rem, 0.9rem + 1.2vw, 2rem);
+  color: #9e00e9;
+  margin: 0;
+  margin-top: 0.35rem; 
+  position: static; 
+  transform: none;
+  z-index: 1;
+  padding: 0 0.25rem;
+  pointer-events: auto;
+  text-align: center;
 }
+ 
 
 
 main {
@@ -195,6 +197,14 @@ main {
     width: max-content;
   }
 
+  /* On small screens, stack subtitle below the title to avoid overlap */
+  .header-title p {
+    position: static;
+    transform: none;
+    margin-top: 0.25rem;
+    pointer-events: auto;
+  }
+
   .divider {
     height: 1px;
     width: 100%;
@@ -304,7 +314,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
   color: white;
   padding-inline: 20px;
   padding-block: 25px;
@@ -333,4 +342,44 @@ main {
   justify-content: center;
   align-items: center;
   color: black;
+}
+
+.go-organizacao {
+  display: inline-block;
+  background: linear-gradient(90deg, rgba(255,68,0,1), rgba(212,0,144,1));
+  color: white;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 10px 30px rgba(213,0,144,0.18);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.go-organizacao:hover,
+.go-organizacao:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(213,0,144,0.22);
+  opacity: 0.98;
+}
+
+@media screen and (max-width: 650px) {
+  .go-organizacao {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header-title h1 {
+    font-size: clamp(2.4rem, 2.8rem + 4.0vw, 8rem);
+  }
+
+  .header-title p {
+    font-size: clamp(1.2rem, 1rem + 1.6vw, 3rem);
+  }
 }
