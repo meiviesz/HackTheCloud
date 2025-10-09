@@ -17,6 +17,7 @@
             "polyfills": [
               "zone.js"
             ],
+            "outputPath": "dist/HackTheCloud",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -86,6 +87,9 @@
               "src/styles.css"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

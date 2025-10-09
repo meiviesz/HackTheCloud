@@ -33,11 +33,16 @@
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .header img {
-  width: 15%;
-  margin-left: 20%;
+  width: 20%;
+  margin: 20px 0 0 20px;
+}
+
+.fill-right {
+  width: 20%;
 }
 
 
