@@ -202,7 +202,31 @@ main {
 @media screen and (max-width: 650px) {
   .content {
     flex-direction: column;
-    width: max-content;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .header img {
+    width: 50%;
+    margin: 10px auto;
+  }
+
+  .header-title {
+    width: 100%;
+    text-align: center;
+  }
+
+  .header-title h1 {
+    justify-content: center;
+    font-size: clamp(1.5rem, 1.2rem + 2vw, 2.5rem);
+    text-align: center;
+    margin: 0;
   }
 
   .header-title p {
@@ -210,6 +234,7 @@ main {
     transform: none;
     margin-top: 0.25rem;
     pointer-events: auto;
+    font-size: clamp(0.9rem, 0.8rem + 1vw, 1.2rem);
   }
 
   .divider {
@@ -221,9 +246,42 @@ main {
 
   .pill-evento .pill,
   .pill.go-organizacao,
-  .pill {
+  .pill,
+  .social-links .pill,
+  .inscreva .pill {
     width: 100%;
     min-width: 0;
+    padding-inline: 1rem;
+    font-size: clamp(1rem, 0.9rem + 1vw, 1.5rem);
+  }
+
+  .social-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .social-links a {
+    width: 100%;
+  }
+
+  main {
+    padding: 2rem 1rem;
+  }
+
+  .evento,
+  .cronograma {
+    padding: 1rem;
+    margin-top: 40px;
+  }
+
+  .evento img {
+    width: 50%;
+  }
+
+  .evento p,
+  .cronograma p {
+    font-size: 1rem;
+    padding: 0 1rem;
   }
 }
 
@@ -511,6 +569,72 @@ main {
     width: 100%;
     padding: 1rem 1.2rem;
     font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 596px) {
+  .header {
+    padding: 0.5rem;
+  }
+
+  .header img {
+    width: 60%;
+  }
+
+  .header-title h1 {
+    font-size: clamp(1.2rem, 1rem + 2vw, 2rem);
+  }
+
+  .header-title p {
+    font-size: clamp(0.8rem, 0.7rem + 1vw, 1rem);
+  }
+
+  main {
+    padding: 1rem 0.5rem;
+  }
+
+  .pill,
+  .social-links .pill,
+  .inscreva .pill {
+    font-size: clamp(0.9rem, 0.8rem + 1vw, 1.2rem);
+    padding: 15px 10px;
+    margin-bottom: 20px;
+  }
+
+  .evento,
+  .cronograma {
+    margin-top: 20px;
+    padding: 0.8rem;
+  }
+
+  .evento img {
+    width: 70%;
+  }
+
+  .evento p,
+  .cronograma p {
+    font-size: 0.9rem;
+  }
+
+  .evento h2,
+  .cronograma h2,
+  #Sobre-o-Evento h2,
+  #Cronograma h2 {
+    font-size: 1.5rem;
+  }
+
+  .cronograma-table-wrapper {
+    margin: 0.5rem -0.5rem;
+    padding: 0 0.5rem;
+    width: calc(100% + 1rem);
+  }
+
+  .cronograma-table {
+    font-size: 0.8rem;
+  }
+
+  .divider {
+    margin: 15px 5px;
   }
 }
 
