@@ -1,6 +1,7 @@
 :host {
   display: block;
-  background: linear-gradient(to bottom right, #2017ca, #9e00e9, #d50090);
+  /* 2.1: NOVO GRADIENTE DE 3 CORES (AZUL -> MAGENTA -> LARANJA) */
+  background: linear-gradient(to bottom right, var(--cor-primaria-azul), var(--cor-secundaria-magenta), var(--cor-destaque-laranja));
   color: #FFFFFF;
   padding: 4rem 2rem;
   min-height: 100vh;
@@ -10,6 +11,7 @@
   --cor-secundaria-roxo: #9e00e9;
   --cor-apoio-branco: #FFFFFF;
   --cor-borda-transparente: rgba(255, 255, 255, 0.2);
+  --cor-destaque-laranja: #FF6D04;
 }
 
 html, body {
@@ -89,7 +91,7 @@ html, body {
 
 .page-title .title-highlight {
   font-weight: 400; 
-  background: linear-gradient(90deg, var(--cor-secundaria-magenta), #fcc5e4);
+  background: linear-gradient(90deg, var(--cor-destaque-laranja), var(--cor-secundaria-magenta));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -177,8 +179,8 @@ html, body {
 }
 
 .member-photo-container {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   border: 3px solid var(--cor-apoio-branco);
   margin: 0 auto 1rem;
@@ -201,6 +203,7 @@ html, body {
   font-weight: 500;
   color: var(--cor-apoio-branco);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  font-family: 'Poppins', sans-serif;
 }
 
 .card-back h4,
@@ -218,6 +221,8 @@ html, body {
 .card-back p {
   font-size: 0.9rem;
   padding: 0 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;                  
 }
 
 .card-back a {
@@ -478,8 +483,8 @@ html, body {
   }
 
   .member-photo-container {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
   }
 
   .member-name {
