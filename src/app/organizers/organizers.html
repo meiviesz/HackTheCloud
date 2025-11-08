@@ -1,18 +1,25 @@
-
 <section class="organizers-page">
   <div class="organizers-top">
-    <button class="back-button" routerLink="/">&larr; Voltar</button>
+    <button class="back-button" routerLink="/">&larr;
+ Voltar</button>
     <h2 class="page-title">
     <span>Conheça a Equipe</span><br>
     <span class="title-highlight">Hack the Cloud</span>
   </h2>
   </div>
 
-  <div class="mascot-container">
+  <div class="mascot-container" 
+       (mouseenter)="playMascotVideo()" 
+       (mouseleave)="pauseMascotVideo()">
+
     <img src="assets/claudinho-up.png" alt="Mascote Claudinho" class="mascot-static">
-    <img src="assets/claudinho-animado.gif" alt="Mascote Claudinho Animado" class="mascot-animated">
+    
+    <video #videoMascot class="mascot-animated" alt="Mascote Claudinho Animado" muted playsinline>
+      <source src="assets/claudinho-animado.webm" type="video/webm">
+    </video>
+
     <div class="speech-bubble desktop-bubble">
-      Olá! Eu sou o Claudinho e serei seu guia. Passe o mouse ou clique nos cards para conhecer a equipe!
+      Olá! Eu sou o Claudinho. Clique nos cards para conhecer a equipe!
     </div>
     <div class="speech-bubble mobile-bubble" [class.hidden]="!isBubbleVisible">
       Conheça a equipe que tornou o<br>
@@ -20,7 +27,6 @@
       possível!
     </div>
   </div>
-
   <div class="team-section">
     <h3 class="section-title">Coordenação</h3>
     <div class="team-grid">
@@ -30,7 +36,8 @@
             <div class="member-photo-container">
               <img [src]="coordinator.photoUrl" [alt]="'Foto de ' + coordinator.name" class="member-photo">
             </div>
-            <p class="member-name">{{ coordinator.name }}</p>
+          
+   <p class="member-name">{{ coordinator.name }}</p>
           </div>
           <div class="card-back">
             <h4>{{ coordinator.role }}</h4>
@@ -42,6 +49,7 @@
     </div>
   </div>
 
+ 
   <div class="team-section">
     <h3 class="section-title">Comissão Organizadora</h3>
     <div class="team-grid manager-grid">
@@ -51,7 +59,8 @@
             <div class="member-photo-container">
               <img [src]="manager.photoUrl" [alt]="'Foto de ' + manager.name" class="member-photo">
             </div>
-            <p class="member-name">{{ manager.name }}</p>
+           
+  <p class="member-name">{{ manager.name }}</p>
           </div>
           <div class="card-back">
             <h4>{{ manager.role }}</h4>
@@ -61,22 +70,26 @@
         </div>
       </div>
     </div>
-    <div class="team-grid">
-      @for (member of commission; track member; let i = $index) {
+    <div 
+ class="team-grid">
+      @for (member of commission; track member;
+ let i = $index) {
         <div class="member-card" (click)="toggleFlip(member)" [style.animation-delay]="i * 0.05 + 's'">
           <div class="card-inner" [class.is-flipped]="member.isFlipped">
             <div class="card-front">
               <div class="member-photo-container">
                 <img [src]="member.photoUrl" [alt]="'Foto de ' + member.name" class="member-photo">
               </div>
-              <p class="member-name">{{ member.name }}</p>
+    
+           <p class="member-name">{{ member.name }}</p>
             </div>
             <div class="card-back">
               <h4>{{ member.role }}</h4>
               <p>{{ member.course }}</p>
               <a [href]="member.link" target="_blank">LinkedIn</a>
             </div>
-          </div>
+  
+         </div>
         </div>
       }
     </div>
