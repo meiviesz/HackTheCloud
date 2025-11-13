@@ -1,5 +1,5 @@
 
-export class App { // O nome da classe era App, não AppComponent
+export class App {
   protected title = 'HackTheCloud';
 
    scrollTo(sectionId: string) {
@@ -9,20 +9,3 @@ export class App { // O nome da classe era App, não AppComponent
     }
   }
 }
-
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'page-principal',
-  templateUrl: `../app/principal/principal.html`,
-  styleUrl: '../app/principal/principal.css'
-})
-export class PagePrincipalComponent {  protected title = 'HackTheCloud';
-
-   scrollTo(sectionId: string) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }}
-
