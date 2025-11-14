@@ -1,5 +1,3 @@
-
-
 <header class="header">
   <img src="assets/logo-hack-the-cloud.png" alt="logo hack the cloud">
   <div class="header-title">
@@ -17,12 +15,10 @@
         <div class="pill-evento">
           <a class="pill" (click)="scrollTo('Sobre-o-Evento')">
             <span>Sobre o Evento</span>
-            <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="10 -960 960 960" width="14" fill="currentColor"></svg>
           </a>
   
           <a class="pill" (click)="scrollTo('Cronograma')">
             <span>Cronograma</span>
-            <svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 -960 960 960" width="14" fill="currentColor"></svg>
           </a>
 
           <div class="organização">
@@ -48,7 +44,7 @@
   <div class="evento">
     <section id="Sobre-o-Evento">
       <h2>Sobre o Evento</h2>
-      <p>Hack The Cloud é uma imersão de 3 dias focada em capacitar estudantes universitários com habilidades práticas em computação em nuvem, utilizando a plataforma AWS. O evento oferece workshops, palestras e atividades práticas para ajudar os participantes a desenvolver competências técnicas e preparar-se para certificações reconhecidas no mercado.</p>
+      <p>Hack The Cloud é uma imersão de 2 dias focada em capacitar estudantes universitários com habilidades práticas em computação em nuvem, utilizando a plataforma AWS. O evento oferece workshops, palestras e atividades práticas para ajudar os participantes a desenvolver competências técnicas e preparar-se para certificações reconhecidas no mercado.</p>
       <div class="inscreva">
         <a class="pill" href="https://docs.google.com/forms/d/e/1FAIpQLSf2dxZ10EVm_mPolAUDf45qegDAFYV2EzUCRyI84AyR3djybw/viewform" aria-label="Instagram" target="_blank" rel="noopener">
           <span>Inscreva-se!</span>
@@ -61,7 +57,9 @@
   <div class="cronograma">
     <section id="Cronograma">
       <h2>Cronograma</h2>
-      <div class="cronograma-table-wrapper">
+      
+      <!-- Tabela para Desktop -->
+      <div class="cronograma-table-wrapper desktop-table">
         <table class="cronograma-table" aria-label="Cronograma do evento">
           <thead>
             <tr>
@@ -74,16 +72,68 @@
             <tr>
               <td>08:00 - 08:30</td>
               <td>Recepção</td>
-              <td>Recepção e Apresentação do Problema</td>
+              <td>A programação do segundo dia será divulgada em breve</td>
             </tr>
             <tr>
               <td>08:30 - 10:00</td>
               <td>Primeira palestra: Laguna Cloud</td>
-              <td>Início do Hackathon</td>
+              <td></td>
             </tr>
             <tr>
               <td>10:00 - 10:30</td>
               <td>Coffee Break</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>10:30 - 11:30</td>
+              <td>Segunda palestra: Do Container ao EKS: Seus Primeiros Passos no Kubernetes da AWS</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>14:30</td>
+              <td>Terceira palestra: Cloud Computing: Acelerando sua carreira no Ecossistema AWS</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>15:30 - 16:00</td>
+              <td>Coffee Break</td>
+              <td></td>
+            </tr> 
+            <tr>
+              <td>16:00</td>
+              <td>Quarta palestra: AWS Amplify na Prática: do Zero ao Deploy com Auth e API em Tempo Real</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>17:30</td>
+              <td>Encerramento</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Tabela para Mobile - Dia 1 -->
+      <div class="cronograma-table-wrapper mobile-table">
+        <h3>Dia 1</h3>
+        <table class="cronograma-table" aria-label="Cronograma do evento - Dia 1">
+          <thead>
+            <tr>
+              <th>Horário</th>
+              <th>Atividade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>08:00 - 08:30</td>
+              <td>Recepção</td>
+            </tr>
+            <tr>
+              <td>08:30 - 10:00</td>
+              <td>Primeira palestra: Laguna Cloud</td>
+            </tr>
+            <tr>
+              <td>10:00 - 10:30</td>
               <td>Coffee Break</td>
             </tr>
             <tr>
@@ -93,34 +143,39 @@
             <tr>
               <td>14:30</td>
               <td>Terceira palestra: Cloud Computing: Acelerando sua carreira no Ecossistema AWS</td>
-              <td></td>
             </tr>
             <tr>
-              <td> 15:15</td>
-              <td> </td>
-              <td>Deadline da entregas</td>
-            </tr>
-            <tr>
-              <td> 15:30 - 16:00</td>
+              <td>15:30 - 16:00</td>
               <td>Coffee Break</td>
-              <td>Início das apresentações</td>
             </tr> 
             <tr>
               <td>16:00</td>
               <td>Quarta palestra: AWS Amplify na Prática: do Zero ao Deploy com Auth e API em Tempo Real</td>
-              <td></td>
-            </tr>
-            <tr> 
-              <td>16:30</td>
-              <td></td>
-              <td>Fim das apresentações, Coffee Break e início das avaliações</td>
             </tr>
             <tr>
               <td>17:30</td>
               <td>Encerramento</td>
-              <td>Apresentação de Resultados e Encerramento</td>
             </tr>
-            </tbody>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Tabela para Mobile - Dia 2 -->
+      <div class="cronograma-table-wrapper mobile-table">
+        <h3>Dia 2</h3>
+        <table class="cronograma-table" aria-label="Cronograma do evento - Dia 2">
+          <thead>
+            <tr>
+              <th>Horário</th>
+              <th>Atividade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Em breve</td>
+              <td>A programação do segundo dia será divulgada em breve</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </section>

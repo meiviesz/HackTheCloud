@@ -95,17 +95,19 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5rem;
+  flex-direction: column;
   box-sizing: inherit;
   position: relative;
 }
 
 .content {
   display: flex;
-  justify-content: space-around;
   width: 100%;
   max-width: 700px;
-  margin-bottom: 4rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
 }
 
 .content h1 {
@@ -119,9 +121,57 @@ main {
 .pill-group {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 1.25rem;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.selects-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.back-side {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.pill-evento {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.organização {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Organizacao {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .pill {
@@ -144,15 +194,19 @@ main {
   letter-spacing: -0.00875rem;
   text-decoration: none;
   margin-bottom: 35px;
+  width: 100%;
+  text-align: center;
 }
 
 .pill-evento .pill {
-  width: 500px;
+  width: 100%;
   justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 .pill.go-organizacao {
-  width: 500px; /* match sidebar pills */
+  width: 100%;
 }
 
 .social-links .pill {
@@ -175,6 +229,7 @@ main {
   letter-spacing: -0.00875rem;
   text-decoration: none;
   margin-bottom: 30px;
+  width: 100%;
 }
 
 
@@ -188,6 +243,20 @@ main {
   align-items: center;
   gap: 0.73rem;
   margin-top: 1.5rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.pill-evento a{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
 .social-links path {
@@ -203,7 +272,8 @@ main {
   .content {
     flex-direction: column;
     width: 100%;
-    padding: 0 1rem;
+    align-items: center;
+    justify-content: center;
   }
 
   .header {
@@ -244,6 +314,13 @@ main {
     margin: 24px 10px;
   }
 
+  .pill-group {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
   .pill-evento .pill,
   .pill.go-organizacao,
   .pill,
@@ -251,13 +328,20 @@ main {
   .inscreva .pill {
     width: 100%;
     min-width: 0;
-    padding-inline: 1rem;
+    padding-inline: 1.5rem;
+    padding-block: 20px;
     font-size: clamp(1rem, 0.9rem + 1vw, 1.5rem);
+    align-content: center;
+    box-sizing: border-box;
   }
 
   .social-links {
     flex-direction: column;
     width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    gap: 0;
   }
 
   .social-links a {
@@ -265,7 +349,7 @@ main {
   }
 
   main {
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
   }
 
   .evento,
@@ -275,7 +359,11 @@ main {
   }
 
   .evento img {
-    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    margin-top: 0;
   }
 
   .evento p,
@@ -422,6 +510,15 @@ main {
   text-decoration: none;
   margin-bottom: 30px;
   margin-top: 80px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease, background 0.3s ease;
+}
+
+.cronograma:hover,
+.cronograma:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(213,0,144,0.22);
+  opacity: 0.98;
 }
 
 #cronograma {
@@ -470,6 +567,22 @@ main {
   margin-top: 1rem;
 }
 
+.desktop-table {
+  display: block;
+}
+
+.mobile-table {
+  display: none;
+}
+
+.mobile-table h3 {
+  font-size: 1.5rem;
+  color: black;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
 .cronograma-table {
   width: 100%;
   border-collapse: collapse;
@@ -503,6 +616,23 @@ main {
 }
 
 @media screen and (max-width: 700px) {
+  .desktop-table {
+    display: none;
+  }
+
+  .mobile-table {
+    display: block;
+  }
+
+  .main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+  }
+  
   .cronograma-table {
     min-width: 0;
     font-size: 0.9rem;
@@ -555,6 +685,8 @@ main {
   box-shadow: 0 10px 30px rgba(213,0,144,0.18);
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease, background 0.3s ease;
+  text-align: center;
+  width: 100%;
 }
 
 .go-organizacao:hover,
@@ -567,8 +699,16 @@ main {
 @media screen and (max-width: 650px) {
   .go-organizacao {
     width: 100%;
-    padding: 1rem 1.2rem;
+    padding: 0;
     font-size: 1rem;
+  }
+  .content {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
   }
 }
 
@@ -590,25 +730,32 @@ main {
   }
 
   main {
-    padding: 1rem 0.5rem;
+    padding: 0.5rem 0.5rem;
   }
 
   .pill,
   .social-links .pill,
   .inscreva .pill {
     font-size: clamp(0.9rem, 0.8rem + 1vw, 1.2rem);
-    padding: 15px 10px;
+    padding-inline: 1rem;
+    padding-block: 15px;
     margin-bottom: 20px;
+    box-sizing: border-box;
   }
 
   .evento,
   .cronograma {
     margin-top: 20px;
-    padding: 0.8rem;
+    padding: 5rem 1rem;
+    box-sizing: center;
   }
 
   .evento img {
-    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    margin-top: 0;
   }
 
   .evento p,
@@ -638,12 +785,32 @@ main {
   }
 }
 
-@media screen and (min-width: 1200px) {
-  .header-title h1 {
-    font-size: clamp(2.4rem, 2.8rem + 4.0vw, 8rem);
+@media screen and (max-width: 375px) {
+  .pill,
+  .social-links .pill,
+  .inscreva .pill,
+  .pill-evento .pill,
+  .pill.go-organizacao {
+    padding-inline: 1rem;
+    padding-block: 12px;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    box-sizing: border-box;
   }
 
-  .header-title p {
-    font-size: clamp(1.2rem, 1rem + 1.6vw, 3rem);
+  .content {
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .pill-group {
+    padding: 0;
+    width: 100%;
+  }
+
+  .social-links {
+    padding: 0;
+    width: 100%;
   }
 }
