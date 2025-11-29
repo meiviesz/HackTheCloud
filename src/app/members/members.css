@@ -1,0 +1,363 @@
+:host {
+  display: block;
+  background: linear-gradient(to bottom right, #2017ca, #9e00e9, #d50090);
+  color: #FFFFFF;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  overflow-x: hidden;
+  --cor-primaria-azul: #2017ca;
+  --cor-secundaria-magenta: #d50090;
+  --cor-secundaria-roxo: #9e00e9;
+  --cor-apoio-branco: #FFFFFF;
+  --cor-borda-transparente: rgba(255, 255, 255, 0.2);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.organizers-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+/* --- TOPO DA PÁGINA (Igual organizers.css) --- */
+.organizers-top {
+  position: relative;
+  display: flex;
+  padding-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.back-button {
+  position: absolute;
+  left: 1rem;
+  top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+  text-decoration: none;
+}
+
+.back-button:hover,
+.back-button:focus {
+  transform: translateY(-2px);
+  background: #FFFFFF;
+  color: var(--cor-primaria-azul);
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .back-button {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin-bottom: 1rem;
+    width: auto;
+    justify-content: center;
+  }
+  .organizers-top { padding-top: 0.5rem; }
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 4rem;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+
+.page-title .title-highlight {
+  font-weight: 400; 
+  background: linear-gradient(90deg, var(--cor-secundaria-magenta), #fcc5e4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* --- SEÇÃO E GRID --- */
+
+.team-section {
+  margin-bottom: 3.5rem;
+}
+
+/* Area Section (Container das categorias) */
+/* Usa Flexbox com Wrap para que os cards fiquem abaixo do título */
+.area-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centraliza os cards */
+  margin-bottom: 3rem;
+  gap: 1rem; /* Espaço entre os cards */
+}
+
+/* Título da área (Logística, Marketing, etc) */
+.area-title {
+  flex-basis: 100%; /* Força o título a ocupar a linha inteira */
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  padding-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  color: #FFFFFF;
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid var(--cor-borda-transparente);
+}
+
+/* --- ESTILO DOS CARDS (Membros) --- */
+
+.card {
+  width: 220px;
+  height: 280px;
+  position: relative;
+  perspective: 1000px; /* Essencial para o efeito 3D */
+  cursor: pointer;
+  margin: 0.5rem;
+  animation: fadeIn 0.5s ease-out forwards;
+  /* Sem cor de fundo aqui, o fundo vai nas faces (front/back) */
+}
+
+/* Define as faces do cartão */
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  /* Estilo Glassmorphism (Vidro) igual ao organizers */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--cor-borda-transparente);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  
+  /* Centralização de conteúdo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  
+  /* Propriedades de animação */
+  backface-visibility: hidden; /* Esconde a parte de trás quando girado */
+  -webkit-backface-visibility: hidden;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+/* --- FRENTE DO CARD --- */
+.card-front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+/* Container da Foto */
+.member-photo-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--cor-apoio-branco); /* Borda branca na foto */
+  margin: 0 auto 1.5rem;
+  overflow: hidden;
+  background-color: rgba(255,255,255,0.1); /* Fallback se não tiver imagem */
+}
+
+.member-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .member-photo {
+  transform: scale(1.15); /* Zoom leve na foto ao passar o mouse */
+}
+
+.member-name {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--cor-apoio-branco);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+/* --- VERSO DO CARD --- */
+.card-back {
+  transform: rotateY(180deg); /* Começa virado para trás */
+  z-index: 1;
+  /* No HTML de members não tem botão, então centralizamos tudo verticalmente */
+  justify-content: center; 
+  gap: 1rem;
+}
+
+.card-back h4 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.card-back p {
+  font-size: 0.95rem;
+  margin: 0;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover .card-front {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .card-back {
+  transform: rotateY(0deg);
+  z-index: 3;
+}
+
+
+/* --- MASCOTE E BALÕES DE FALA (Mantido igual) --- */
+.mascot-container {
+  position: absolute;
+  z-index: 20;
+  cursor: pointer;
+  width: 400px;
+  aspect-ratio: 1 / 1;
+  top: 100px;
+  right: 0%;
+}
+
+.mascot-static,
+.mascot-animated {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mascot-animated { opacity: 0; }
+.mascot-container:hover .mascot-static { opacity: 0; }
+.mascot-container:hover .mascot-animated { opacity: 1; }
+
+.speech-bubble {
+  position: absolute;
+  background-color: #FFFFFF;
+  color: #1E2A3A;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-out;
+  pointer-events: none;
+}
+
+.speech-bubble.desktop-bubble {
+  width: 250px;
+  top: 50px;
+  right: 95%;
+  margin-right: 1rem;
+  transform: translateY(10px) translateX(10px);
+}
+
+.speech-bubble.desktop-bubble::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  left: 100%;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--cor-apoio-branco);
+}
+
+.mascot-container:hover .speech-bubble.desktop-bubble {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) translateX(0);
+}
+
+/* --- FOOTER E LOADING --- */
+.page-footer {
+  width: 100%;
+  padding: 2rem;
+  margin-top: 4rem;
+  border-top: 1px solid var(--cor-borda-transparente);
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.footer-logo { height: 100px; width: auto; opacity: 0.8; }
+.unb-logo { height: 60px; width: auto; opacity: 0.8; }
+
+.loading-message, .empty-message {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 1024px) {
+  :host { padding: 2rem 1rem; }
+  .page-title { display: none; }
+  
+  .mascot-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 3rem;
+    top: auto; right: auto; left: auto;
+    height: auto; aspect-ratio: unset;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  
+  .mascot-static { display: none; }
+  .mascot-animated { opacity: 1; position: relative; width: 200px; height: auto; margin-bottom: 1rem; }
+  .speech-bubble.desktop-bubble { display: none; }
+  
+  .card {
+    width: 100%;
+    max-width: 280px;
+    height: 240px;
+  }
+}

@@ -1,0 +1,66 @@
+
+<section class="organizers-page">
+    <div class="organizers-top">
+        <button class="back-button" routerLink="/">&larr; Voltar</button>
+        <h2 class="page-title">
+            <span>Conheça a Equipe</span><br>
+            <span class="title-highlight">Hack the Cloud</span>
+        </h2>
+    </div>
+
+    <div class="mascot-container">
+        <img src="assets/claudinho-up.png" alt="Mascote Claudinho" class="mascot-static">
+        <img src="assets/claudinho-animado.gif" alt="Mascote Claudinho Animado" class="mascot-animated">
+        <div class="speech-bubble desktop-bubble">
+        Olá! Eu sou o Claudinho e serei seu guia. Passe o mouse ou clique nos cards para conhecer a equipe!
+        </div>
+        <!-- <div class="speech-bubble mobile-bubble" [class.hidden]="!isBubbleVisible">
+        Conheça a equipe que tornou o<br>
+        <span class="highlight-text">Hack the Cloud</span><br>
+        possível!   
+        </div> -->
+    </div>
+
+    <div class="team-section">
+        @if (isLoading) {
+        <p class="loading-message">Carregando lista de membros...</p>
+        } @else if (groupedMembers.size === 0) {
+        <p class="empty-message">Falha ao carregar os membros. Tente novamente mais tarde.</p>
+        } @else {
+            @for (area of areaOrder; track area) {
+                @if (groupedMembers.has(area)) {
+                    <div class="area-section">
+                        <h2 class="area-title">{{ area }}</h2>
+                        @for (member of groupedMembers.get(area); track member.name) {
+                            <div class="card">
+                                <div class="card-front">
+                                <div class="member-photo-container">
+                                    <img
+                                        [src]="'https://lh3.googleusercontent.com/d/' + member.photoId"
+                                        referrerpolicy="no-referrer"
+                                        alt="Foto de {{ member.name }}"
+                                        class="member-photo"
+                                    >
+                                </div>
+                                <p class="member-name">{{ member.name }}</p>
+                                </div>
+                                <div class="card-back">
+                                    <h4>{{ member.name }}</h4>
+                                    <h4>{{ member.role }}</h4>
+                                    <p>{{ member.course }}</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            }
+        }
+    </div>
+</section>
+
+<footer class="page-footer">
+    <div class="footer-logos">
+        <img src="assets/logo-hack-the-cloud.png" alt="Logo Hack The Cloud" class="footer-logo">
+        <img src="assets/unb-logo.png" alt="Logo UnB" class="unb-logo">
+    </div>
+</footer>
